@@ -40,7 +40,15 @@ namespace RegFilesParser
                     string value;
                     var type = "string";
                     if (strings[1].Contains("\""))
-                        value = strings[1].Trim('"');
+                    {
+                        value = strings[1];
+                        if (value[1] == '\\')
+                            value = value.Remove(0, 2);
+                        if (value.Contains("\"\""))
+                            value=value.Replace("\"\"", "\"");
+
+                    }
+                      
                     else
                     {
                         strings = strings[1].Split(':');

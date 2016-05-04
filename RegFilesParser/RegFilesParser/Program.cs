@@ -13,7 +13,7 @@ namespace RegFilesParser
             RegistryFile registryFile=new RegistryFile();
             try
             {
-                registryFile.Parse(filePath: @"C:\Users\pervolo\Downloads\test1 (1).reg");
+                registryFile.Parse(filePath: @"C:\Users\pervolo\Downloads\test3.reg");
             }
             catch (ArgumentException argumentException)
             {
