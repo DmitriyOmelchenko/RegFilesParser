@@ -54,9 +54,10 @@ namespace RegFilesParser
                         strings = strings[1].Split(':');
                         type = strings[0];
                         value = strings[1];
-                        while (value.LastOrDefault() == '\\')
+                        while (lines[j].LastOrDefault() == '\\')
                         {
-                            value += lines[++j];
+                            value=value.Trim('\\', '\n');
+                            value += lines[++j].Trim();
                         }
                     }
                     
